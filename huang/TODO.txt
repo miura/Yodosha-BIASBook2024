@@ -6,3 +6,4 @@
 ## Add title to the figures
 ## Add a section about drawing a line to measure the intensity.
 ## Make the link to download the files more consistent
+## Change the color scheme of the first example figure
