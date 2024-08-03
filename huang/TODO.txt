@@ -1,0 +1,8 @@
+##TODO: Teach how to restart the kernel, check table of contents. 
+## Check the font - make it unified
+## See where to use katakana, or just English
+## Pythonに新しい方はこのチュートリアルをPythonを習う機会としてtreatしてほしい。
+##　重心->Centre of Mass/ Centroid
+## Add title to the figures
+## Add a section about drawing a line to measure the intensity.
+## Make the link to download the files more consistent
