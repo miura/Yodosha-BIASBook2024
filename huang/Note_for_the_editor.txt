@@ -1,0 +1,9 @@
+1. I put the sample codes (the codes used in the *.md file) as a Jupyter notebook in this folder: https://github.com/miura/Yodosha-BIASBook2024/tree/main/huang/code
+
+2. In the section "Napari Layer の紹介" chapter I used the image that will be later used in 実践編 型2 and 型3 as example images, as I needed to introduce the concept of track layers and shape (trace) layers, and I think it would be useful to teach the reader how to label manually and this will motivate the reader to learn how to do this manually heavy jobs automatically in the later chapters
+
+3. I (re)uploaded the images used as my examples (those from 実践編 型2 and 型3) here: https://github.com/miura/Yodosha-BIASBook2024/tree/main/huang/code/sample_images; We can think about how to make the data download link more consistent later.
+
+4. I did not include the 用語解説 section, as I think we could discuss a list of 用語 to include first before writing it.
+
+5. I put a lot more figures than I was asked for as I think they would be useful as an introductory book. To make spaces for images I also reduced the word counts. Most of my figures are self explanatory so I did not put much descriptions for them.
