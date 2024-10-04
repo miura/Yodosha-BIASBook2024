@@ -1,4 +1,5 @@
 # code09: measure single nucleus time series
+from ij import Prefs
 from ij import IJ
 from ij import ImagePlus
 from ij.process import ImageProcessor
@@ -10,6 +11,8 @@ from ij.plugin.filter import Binary
 from ij.plugin.filter import ThresholdToSelection
 from fiji.threshold import Auto_Threshold
 from inra.ijpb.morphology import Reconstruction
+
+Prefs.blackBackground = True
 
 # orgimp: ImagePlus
 def splitChannels( orgimp ):

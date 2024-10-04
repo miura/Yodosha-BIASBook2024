@@ -1,4 +1,5 @@
 # code 18: nucleus rim intensity measurements
+from ij import Prefs
 from java.awt import Color
 from java.awt.image import ColorModel
 from ij import IJ
@@ -17,13 +18,13 @@ from ij.plugin.filter import ThresholdToSelection
 from fiji.threshold import Auto_Threshold
 from inra.ijpb.morphology import Reconstruction
 from inra.ijpb.label import LabelImages
-from inra.ijpb.color.ColorMaps import CommonLabelMaps
-from inra.ijpb.color import ColorMaps
-from inra.ijpb.binary.conncomp import FloodFillComponentsLabeling3D
+from inra.ijpb.binary import BinaryImages
+from ij.plugin import LutLoader
 from inra.ijpb.plugins import RemoveBorderLabelsPlugin
-from inra.ijpb.plugins import Connectivity3D
-from inra.ijpb.plugins import LabelSizeFilteringPlugin
-from inra.ijpb.plugins.LabelSizeFilteringPlugin import Operation
+from inra.ijpb.label.select import LabelSizeFiltering
+from inra.ijpb.label.select import RelationalOperator
+
+Prefs.blackBackground = True
 
 # orgimp: ImagePlus
 def splitChannels( orgimp ):
@@ -146,28 +147,21 @@ def thresholdMomentStack( imp ):
 
 # connected component analysis
 def connectedComponentAnalysis3D( imp ):	           
-	colorMap = \
-	   CommonLabelMaps.GLASBEY_BRIGHT.computeLut(255, False)
-	cm = ColorMaps.createColorModel(colorMap, Color.BLACK)
-	bitDepth = 8
-	connectivity = "6"
-	connValue = \
-	   Connectivity3D.fromLabel(connectivity).getValue()
-	algo = FloodFillComponentsLabeling3D(connValue, bitDepth)
-	res = algo.computeResult(imp.getStack())
-	implabeled = ImagePlus("labeled", res.labelMap)
-	implabeled.getProcessor().setColorModel(cm)
-	implabeled.getStack().setColorModel(cm)
-	implabeled.setDisplayRange(0, max(res.nLabels, 255))
+	connectivity = 6
+	bitdepth = 8
+	implabeled = BinaryImages.componentsLabeling\
+		(imp, connectivity, bitdepth)
+	gilut = LutLoader.getLut("glasbey_inverted")
+	implabeled.setLut(gilut)
 	return implabeled
 
 #implabeled.show()
 
 # size filtering
 def removeSmallOnes(implabeled, sizeLimit):
-	filtertype = "Greater_Than"
-	op = Operation.fromLabel( filtertype )
-	implabeledFiltered = op.applyTo(implabeled, sizeLimit)
+	sizeFilter = LabelSizeFiltering\
+		(RelationalOperator.GT, sizeLimit)
+	implabeledFiltered = sizeFilter.process(implabeled)
 	return implabeledFiltered
 
 # remove border nucs
