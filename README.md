@@ -29,7 +29,7 @@
    7. ノーコード深層学習を使った三次元電子顕微鏡像の解析
    8. 顕微鏡制御と画像解析
 3. 論文投稿編
-   1. 画像と画像解析を公開するためチェックリスト
+   1. 画像解析を使った論文のためのチェックリスト　ー　不正行為と画像解析の再現性
    2. 画像データリポジトリ
 4. 発展編
    1. 次世代のデータフォーマット
@@ -40,7 +40,7 @@
 
 ## Fijiの基本的な操作方法の解説
 
-1. Fijiのインストールの仕方
+1. [Fijiのインストールの仕方](instructions/InstallingFiji.md)
 2. [FIjiを最新状態にする方法](instructions/UpdatingFiji.md)
 3. [Update Siteを使ってFijiにプラグインを追加する方法](instructions/InstallingPluginViaUpdateSites.md)
 
