@@ -8,18 +8,20 @@
 
 1. 基礎編
    1. Jythonの書き方
-      1. コードとサンプル画像
+      1. [コード](miura/JythonBasics)
    2. napariの書き方のコード
       1. コードとサンプル画像
+   3. Google Colabの使い方
 2. 実践編
    1. 核膜に移行するタンパク質の動態を測定
-      1. コードとサンプル画像
+      1. [コードとサンプル画像](miura/module_Nucleus)
    2. トラッキングと効果的なプラグインの利用
       1. コードとサンプル画像
    3. Fucci の画像に Trackmate を使用する方法
-   4. 深層学習とサーバー・クライアントモデルを使ったトラッキング解析 
+   4. 深層学習とサーバー・クライアントモデルを使ったトラッキング解析
+      1. [コード](module_Mastodon)
    5. 血管三次元ネットワーク解析
-      1. コードとサンプル画像
+      1. [コードとサンプル画像](miura/module_bloodVessels)
    6. 画像を使ったイネのバイオマスの推定のコード
       1. google doc raw text: <https://docs.google.com/document/d/1yE3XFPviWBW8UFr80JzWOCHgGsahtMZdcNaz6n4G_ac/edit#heading=h.u03f20bykwox>
    7. ノーコード深層学習を使った三次元電子顕微鏡像の解析
