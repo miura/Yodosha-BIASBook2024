@@ -2,7 +2,7 @@
 
 Fijiのメニューから[Help > Update]を選ぶと、プログレスバーのついた小さなウィンドウが現れ、しばらく現在のFijiのアップデート状況をウェブ上で確認する作業が自動的に始まる。この作業のあとに、図1のような"ImageJ Updater"という名前のウィンドウが表示される。
 
-![image-20241020173940739](/Users/miura/Dropbox/20230200_Yodosha/Yodosha-BIASBook2024/instructions/figs/ImageJUpdaterWindow.png)
+![image-20241020173940739](figs/ImageJUpdaterWindow.png)
 
 図1 ImageJ Updaterのウィンドウ
 
