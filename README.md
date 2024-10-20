@@ -42,5 +42,5 @@
 
 1. Fijiのインストールの仕方
 2. [FIjiを最新状態にする方法](instructions/UpdatingFiji.md)
-3. [Update Siteを使ってFijiにプラグインを追加する方法](instructions/UpdatingFiji.md)
+3. [Update Siteを使ってFijiにプラグインを追加する方法](instructions/InstallingPluginViaUpdateSites.md)
 
