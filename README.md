@@ -10,7 +10,7 @@
    1. Jythonの書き方
       1. [コード](miura/JythonBasics)
    2. napariの書き方
-      1. [コード](huang/code/sample_code.ipynb)
+      1. [コード（ノートブック）](huang/code/sample_code.ipynb)
       2. [サンプル画像](huang/code/sample_images)
    3. Google Colabの使い方
       1. ノートブック
@@ -31,8 +31,7 @@
       1. [コードとサンプル画像](miura/module_bloodVessels)
    6. 画像を使ったイネのバイオマスの推定のコード
       1. ノートブック
-      1. google doc raw text: <https://docs.google.com/document/d/1yE3XFPviWBW8UFr80JzWOCHgGsahtMZdcNaz6n4G_ac/edit#heading=h.u03f20bykwox>
-   7. ノーコード深層学習を使った三次元電子顕微鏡像の解析
+   7. ノーコード深層学習による電子顕微鏡画像のミトコンドリア分節化と形状のクラスタリング解析
       1. [ノートブック](kawai/kawai.ipynb)
    8. 顕微鏡制御と画像解析
 3. 論文投稿編
