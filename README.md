@@ -10,7 +10,8 @@
    1. Jythonの書き方
       1. [コード](miura/JythonBasics)
    2. napariの書き方のコード
-      1. コードとサンプル画像
+      1. [コード](huang/code/sample_code.ipynb)
+      2. [サンプル画像](huang/code/sample_images)
    3. Google Colabの使い方
 2. 実践編
    1. 核膜に移行するタンパク質の動態を測定
