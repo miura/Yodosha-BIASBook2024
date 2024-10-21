@@ -47,6 +47,13 @@ https://forum.image.sc/t/fiji-clij-etc-native-on-apple-silicon-arm64-m1/53627/25
 Fiji version 2.14.0/1.54f was used for image analysis (Schindelin et al, 2012)
 ```
 
+#### メニューから知る
+[Plugins > Utilities > ImageJ Properties]を選ぶと、”Properties”という名前の長いテキストファイルのウィンドウが開く。ここから"IJ.getVersion"という行を探すと、そこにバージョン番号が書かれている。
+
+![image-20241021160243958](figs/IJproperties.png)
+
+
+
 #### スクリプトで知る
 
 Jythonのスクリプトであれば
