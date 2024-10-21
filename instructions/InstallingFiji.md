@@ -2,6 +2,8 @@
 
 20241021 三浦　耕太
 
+## ダウンロードとインストール
+
 以下のリンク先に移動し、使っているマシンに適合したインストーラーをダウンロードしてインストールすればよい。
 
 Fiji  
@@ -30,4 +32,53 @@ Fiji, CLIJ, etc. *native* on Apple Silicon (arm64) M1
 https://forum.image.sc/t/fiji-clij-etc-native-on-apple-silicon-arm64-m1/53627/25
 
 
+
+## バージョン番号
+
+論文にFijiを記載する際に、使ったバージョン番号を記載することは必須である。バージョン番号は以下のようにいくつかの方法で知ることができる。
+
+#### 立ち上げたときに情報バーに表示される。
+
+![image-20241021152528113](figs/FijiMenuBar.png)
+
+この例に従えば、例えば論文では次のように記載する。
+
+```
+Fiji version 2.14.0/1.54f was used for image analysis (Schindelin et al, 2012)
+```
+
+#### スクリプトで知る
+
+Jythonのスクリプトであれば
+
+```
+from ij import IJ
+
+print(IJ.getVersion())
+#  IJ.getVersion: 2.14.0/1.54f
+```
+
+のようにして知ることもできる。
+
+### プラグインのバージョン番号
+
+論文では使ったプラグインのバージョン番号も記載すべきである。バージョン番号によって、計算方法が変わっていることは珍しくない。
+
+バージョン番号は、ImageJ Updater機能で知ることができる。メニューから[Help > Update...]を選ぶと、状態を自動スキャンしたあとで、ImageJ Updaterのウィンドウが表示される。ウィンドウの下の"Advanced Mode"のボタンをクリックしてウィンドウの表示を変え、上から二行目の"View Options"のドロップダウンメニューから"View all files"を選ぶと、下の図のようにFijiのすべてのファイルが表示される。
+
+![image-20241021153631008](figs/updaterViewAllFIles.png)
+
+この状態で、一番上の"Search"の検索フィールドにMorphoLibJの先頭の"Morph"と打ち込んでリストを絞り込む。そうすると、下の図のようにヒットしたファイルがリストされる。plugins/MorphoLibJ_.jarをクリックすると、右側の"Details"というフィールドに、このファイルの詳細が表示される。
+
+![image-20241021154543191](figs/MorphoLibJversion.png)
+
+
+
+この情報のうち、"File:"に続くFile名にある3ケタの数字（ここでは1.6.3）が使っているMorphoLibJのバージョン番号である。したがって論文には
+
+```
+For 3D connected component analysis, MorpholibJ version 1.6.3 was used (Legland et. al. 2016).
+```
+
+のように表記する。
 
