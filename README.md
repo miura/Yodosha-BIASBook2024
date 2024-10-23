@@ -21,13 +21,13 @@
    2. トラッキングと効果的なプラグインの利用
       1. ノートブック
       2. サンプル画像（？）
-   3. Fucci の画像に Trackmate を使用する方法
+   3. 細胞周期の蛍光プローブFucciの時系列データ解析
       1. コード
       1. サンプル画像
    4. 深層学習とサーバー・クライアントモデルを使ったトラッキング解析
       1. [コード](sugawara/module_Mastodon)
       1. サンプル画像
-   5. 血管三次元ネットワーク解析
+   5. 血管腫瘍における三次元管状構造ネットワークの分析
       1. [コードとサンプル画像](miura/module_bloodVessels)
    6. 画像を使ったイネのバイオマスの推定のコード
       1. ノートブック
@@ -45,9 +45,12 @@
 
 
 
-## Fijiの基本的な操作方法の解説
+## Fijiの基本的な操作方法
 
 1. [Fijiのインストールの仕方](instructions/InstallingFiji.md)
 2. [FIjiを最新状態にする方法](instructions/UpdatingFiji.md)
 3. [Update Siteを使ってFijiにプラグインを追加する方法](instructions/InstallingPluginViaUpdateSites.md)
 
+## 深層学習のための環境
+
+1. PythonのGPU環境構築
