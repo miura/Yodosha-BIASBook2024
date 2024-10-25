@@ -4,6 +4,20 @@
 
 ... TODO
 
+
+
+## 環境構築など
+
+### Fijiの基本的な操作方法
+
+1. [Fijiのインストールの仕方](instructions/InstallingFiji.md)
+2. [FIjiを最新状態にする方法](instructions/UpdatingFiji.md)
+3. [Update Siteを使ってFijiにプラグインを追加する方法](instructions/InstallingPluginViaUpdateSites.md)
+
+### 深層学習のための環境
+
+1. [PythonのGPU環境構築](kawai/PythonのGPU環境構築.md)
+
 ## コードとサンプル画像へのリンク
 
 1. 基礎編
@@ -42,15 +56,3 @@
    1. 次世代のデータフォーマット
    2. 機械学習・深層学習と分節化
    3. GloBIAS and networks
-
-
-
-## Fijiの基本的な操作方法
-
-1. [Fijiのインストールの仕方](instructions/InstallingFiji.md)
-2. [FIjiを最新状態にする方法](instructions/UpdatingFiji.md)
-3. [Update Siteを使ってFijiにプラグインを追加する方法](instructions/InstallingPluginViaUpdateSites.md)
-
-## 深層学習のための環境
-
-1. PythonのGPU環境構築
