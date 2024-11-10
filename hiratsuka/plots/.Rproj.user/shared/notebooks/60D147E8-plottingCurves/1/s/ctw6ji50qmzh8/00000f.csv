@@ -1,0 +1,33 @@
+"0","library(tidyverse)"
+"2","── [1mAttaching core tidyverse packages[22m ─────────────────────────────────────── tidyverse 2.0.0 ──
+[32m✔[39m [34mdplyr    [39m 1.1.4     [32m✔[39m [34mreadr    [39m 2.1.4
+[32m✔[39m [34mforcats  [39m 1.0.0     [32m✔[39m [34mstringr  [39m 1.5.1
+[32m✔[39m [34mggplot2  [39m 3.4.4     [32m✔[39m [34mtibble   [39m 3.2.1
+[32m✔[39m [34mlubridate[39m 1.9.3     [32m✔[39m [34mtidyr    [39m 1.3.0
+[32m✔[39m [34mpurrr    [39m 1.0.2     "
+"2","── [1mConflicts[22m ───────────────────────────────────────────────────────── tidyverse_conflicts() ──
+[31m✖[39m [34mdplyr[39m::[32mfilter()[39m masks [34mstats[39m::filter()
+[31m✖[39m [34mdplyr[39m::[32mlag()[39m    masks [34mstats[39m::lag()
+[36mℹ[39m Use the ]8;;http://conflicted.r-lib.org/conflicted package]8;; to force all conflicts to become errors"
+"0","library(RColorBrewer)"
+"0",""
+"0","df <- read_csv('XY01-1_Intensities.csv')"
+"2","[1mRows: [22m[34m5464[39m [1mColumns: [22m[34m10[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m───────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[32mdbl[39m (10): Spot, TrackID, X, Y, Q, Z, T, C1, C2, C3"
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
+"0","dfl <- pivot_longer(df, c(C1, C2, C3), names_to = ""channels"", values_to = ""intensity"")"
+"0","plot1 <- dfl |> "
+"0","  filter(TrackID >= 0) |>"
+"0","  filter(TrackID < 30) |>"
+"0","  filter(channels != ""C3"") |> "
+"0","  ggplot(aes(x=T, y=intensity, color=channels)) +"
+"0","  geom_line() +"
+"0","  scale_colour_brewer(palette = ""Paired"") +"
+"0","  theme_classic() +"
+"0","  facet_wrap(~factor(TrackID))"
+"0",""
+"0","plot1"
