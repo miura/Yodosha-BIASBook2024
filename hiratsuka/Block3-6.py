@@ -25,3 +25,14 @@ imp_mVenus.show()
 imp_mVenus.setTitle('mVenus')
 imp_add.show()
 imp_add.setTitle('Add')
+
+#@ Integer (Label = "Gaussian Blur (Disabled if 0)", value = 1) sigma
+
+from ij import IJ
+
+#　ガウスぼかしの関数
+def Gaussian_filter(imp,sigma):
+	if sigma > 0:
+		print "Gaussian Blur: sigma: " + str(sigma)
+	IJ.run(imp, "Gaussian Blur...", \
+		"sigma=" + str(sigma) + " stack")

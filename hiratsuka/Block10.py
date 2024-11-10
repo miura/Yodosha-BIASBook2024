@@ -1,45 +1,86 @@
-#@ File    (label = "Input directory", style = "directory") srcFile
-#@ File    (label = "Output directory", style = "directory") dstFile
-#@ String  (label = "File extension", value=".tif") ext
-#@ String  (label = "File name contains", value = "") containString
+#@ Integer (label = "Background subtraction (Disabled if 0)", value = 50) BGval
+#@ Integer (Label = "3D filter (Disabled if 0)", value = 1) sigma
 
+#モジュールのimport
 import os
 import sys
 from ij import IJ, ImagePlus
-from loci.plugins import BF
-from loci.plugins.in import ImporterOptions
+from ij.process import StackStatistics
+from ij.plugin import \
+	ChannelSplitter, \
+	ImageCalculator, \
+	Concatenator,  \
+	HyperStackConverter
 
-#ポップアップアップウインドウで取得した情報
-	#探索するフォルダの絶対パスを取得
-srcDir = srcFile.getAbsolutePath()
-	#画像を保存するフォルダの絶対パスを取得
-dstDir = dstFile.getAbsolutePath()
-print srcDir
-print dstDir
-#ファイル名の集まり。はじめは空で初期化
-filecol = [] 
-#フォルダ名の集まり。はじめは空で初期化
-rootcol = [] 
+#インスタンスの作成
+IC = ImageCalculator()
 
-#指定したフォルダ内の探索
-for root, directories, filenames in os.walk(srcDir): 
-	#ファイル名の並び替え
-	filenames.sort() 
-	#ファイルごとに条件のチェック
-	for filename in filenames: 
-		#拡張子のチェック
-		if not filename.endswith(ext): 
-			#条件を満たさないときはスキップ	
-			continue 
-		#ファイル名のチェック
-		if containString not in filename: 
-			#条件を満たさないときはスキップ
-			continue 
-		filecol.append(filename)
-		rootcol.append(root)
+#-------これまでの関数の記述ここから-------------
 
-#条件を満たすファイルについて繰り返し処理
-for i in range(len(filecol)): 
-#ファイルのパスを表示  	
-	cprint(os.path.join(rootcol[i],filecol[i])) 
-  	#ここに処理を書くと全てのファイルに実行される
+#　チャネルを分割し、重ね合わせ画像を作成する関数
+def split_and_add(imp):
+	imp_split = ChannelSplitter.split(imp)
+	imp_mCherry = imp_split[0].duplicate()
+	imp_mVenus = imp_split[1].duplicate()
+	imp_add = imp_mCherry.duplicate()
+	IC.run("add stack", imp_add, imp_mVenus)
+	return imp_mCherry, imp_mVenus, imp_add
+
+#　ガウスぼかしの関数
+def Gaussian_filter(imp,sigma):
+	if sigma > 0: 
+		print "Gaussian Blur: sigma: " + str(sigma)   
+		IJ.run(imp, "Gaussian Blur...", \
+			"sigma=" + str(sigma) + " stack")
+
+#　背景の引き算処理の関数
+def Background_subtraction(imp,BGval):
+	if BGval >0: 
+		print "Background subtraction: rolling ball: " \
+			+ str(BGval)
+		IJ.run(imp, "Subtract Background...", \
+			"rolling=" + str(BGval) + " stack")
+
+#　ベースライン輝度の引き算の関数
+def Baseline_subtraction(imp):
+	stat_imp = StackStatistics(imp)
+	minVal_imp = stat_imp.min
+	IJ.run(imp, "Subtract...", \
+	"value=" + str(minVal_imp) + " stack")
+
+#　連結画像を作成する関数
+def concat_HSC(imp1,imp2,imp3):
+	imp_dim = imp1.getDimensions()
+	#Channel,Z,Tの枚数などの表示
+	print(imp_dim)
+	imp_concat = Concatenator.run(imp1, imp2, imp3)
+	#Hyperstackへの変換
+	imp_HSC = HyperStackConverter.\
+	toHyperStack(imp_concat, 3, \
+	imp_dim[3], imp_dim[4], \
+	"xyztc", "grayscale")
+	return imp_HSC
+	
+#-------これまでの関数の記述ここまで-------------
+
+#  ファイル一つの前処理の関数
+def prepare3chHyperstack(imp):
+	#　チャネルを分割し、重ね合わせ画像を作成
+	imp_mCherry, imp_mVenus, imp_add = split_and_add(imp)
+	#　ガウスぼかしの関数を重ね合わせ画像に適用
+	Gaussian_filter(imp_add,sigma)
+	#　背景の引き算処理の関数をさらに適用
+	Background_subtraction(imp_add,BGval)
+	#　ベースライン輝度の引き算の関数を
+	#  mCherry画像とmVenus画像に適用
+	Baseline_subtraction(imp_mCherry)
+	Baseline_subtraction(imp_mVenus)
+	# 　連結画像を作成
+	imp_HSC = concat_HSC(imp_mCherry,imp_mVenus,imp_add)
+	return imp_HSC
+
+#　アクティブな画像を取得
+imp = IJ.getImage()
+#  ファイル一つの前処理
+imp_HSC = prepare3chHyperstack(imp)
+imp_HSC.show()

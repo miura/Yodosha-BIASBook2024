@@ -1,9 +1,17 @@
-from ij.process import StackStatistics
-from ij import IJ
-imp = IJ.getImage()
-#スタック画像全体での統計量の取得
-stat = StackStatistics(imp)
-#スタック画像全体での最小値
-minVal = stat.min
-#最小値をバックグラウンドとして画像全体から引き算する
-IJ.run(imp, "Subtract...", "value=" + str(minVal) + " stack");
+from ij.plugin import Concatenator
+from ij.plugin import HyperStackConverter
+
+def concat_HSC(imp1,imp2,imp3):
+	imp_dim = imp1.getDimensions()
+	#Channel,Z,Tの枚数などの表示
+	print(imp_dim)
+	imp_concat = Concatenator.run(imp1, imp2, imp3)
+	#Hyperstackへの変換
+	imp_HSC = HyperStackConverter.\
+	toHyperStack(imp_concat, 3, \
+	imp_dim[3], imp_dim[4], \
+	"xyztc", "grayscale")
+	return imp_HSC
+
+imp_HSC = concat_HSC(imp_mCherry,imp_mVenus,imp_add)
+imp_HSC.show()
