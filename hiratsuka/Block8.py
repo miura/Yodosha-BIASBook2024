@@ -1,6 +1,12 @@
-#@ Integer (label = "Background subtraction (Disabled if 0)", value = 50) BGval
-from ij import IJ
-imp = IJ.getImage()
+from ij.process import StackStatistics
 
-if BGval >0: # BGValが有効な数字の時のみガウスぼかしを行う
-	IJ.run(imp, "Subtract Background...", "rolling=" + str(BGval) + " stack")
+#　ベースライン輝度の引き算の関数
+def Baseline_subtraction(imp):
+	stat_imp = StackStatistics(imp)
+	minVal_imp = stat_imp.min
+	IJ.run(imp, "Subtract...", \
+	"value=" + str(minVal_imp) + " stack")
+
+Baseline_subtraction(imp_mCherry)
+Baseline_subtraction(imp_mVenus)
+
