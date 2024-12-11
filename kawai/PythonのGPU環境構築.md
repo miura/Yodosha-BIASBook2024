@@ -52,7 +52,7 @@ condaにおいては、CUDAおよびcuDNNに対応するものはcudatoolkitで�
 次に、Pytorchが正しくGPUを認識できているか確認しよう。pythonのインタラクティブシェル (ターミナルなどでpythonコマンドを打つと始まるpython実行環境) にて
 
 ```import torch  
-print(torch**.**cuda**.**is\_available())  
+print(torch.cuda.is_available())  
 ```
 
 と実行すると、GPUが認識できていれば `True` が、失敗していれば` False`が表示される。
