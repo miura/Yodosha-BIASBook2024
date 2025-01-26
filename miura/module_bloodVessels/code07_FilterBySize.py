@@ -1,4 +1,3 @@
-from ij import ImagePlus
 from inra.ijpb.binary import BinaryImages
 from inra.ijpb.label.select import LabelSizeFiltering
 from inra.ijpb.label.select import RelationalOperator
