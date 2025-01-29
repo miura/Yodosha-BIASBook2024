@@ -23,7 +23,7 @@ https://docs.anaconda.com/miniconda/#miniconda-latest-installer-links
 
 まず、コマンドラインからこの章で使う仮想環境を作成する[^2]。
 
-上記のサイトでMinicondaをインストールしたら、エクスプローラーで “**anaconda prompt (miniconda3)**” を見つけてクリックする (Macでは、**ターミナル(Terminal)**と呼ぶ。ここでの使い方はWindowsでのanaconda promptと変わらない)。**図1**のような画面が現れる。
+上記のサイトでMinicondaをインストールしたら、エクスプローラーで “**anaconda prompt (miniconda3)**” を見つけてクリックする (Macでは、**ターミナル** (**Terminal**)と呼ぶ。ここでの使い方はWindowsでのanaconda promptと変わらない)。**図1**のような画面が現れる。
 
 ![Anaconda Promptのスタート画面](figs/1_anaconda_prompt_start.png)
 
