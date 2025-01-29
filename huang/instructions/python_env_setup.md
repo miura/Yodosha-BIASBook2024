@@ -4,7 +4,7 @@
 
 ## Anaconda/Minicondaのインストール
 
-Pythonパッケージ管理ツールであるconda (https://conda.io/projects/conda/en/latest/index.html) を使用してPython環境を設定する。condaにはAnacondaとMinicondaの2つのバージョンがあり、どちらも本章および後の章で必要なPython環境の作成と管理が可能である。ただし、Minicondaはコマンドラインでのみ操作可能であるのに対し、Anacondaはコマンドラインに加え、GUI（グラフィカルユーザーインターフェース）で環境管理が可能である。そのため、Anacondaはプログラミング初心者にとってより使いやすい一方、Minicondaよりも多くのストレージを必要とする（約4.4 GB対約480 MB[^1]。
+Pythonパッケージ管理ツールであるconda (https://conda.io/projects/conda/en/latest/index.html) を使用してPython環境を設定する。condaにはAnacondaとMinicondaの2つのバージョンがあり、どちらも本章および後の章で必要なPython環境の作成と管理が可能である。ただし、Minicondaはコマンドラインでのみ操作可能であるのに対し、Anacondaはコマンドラインに加え、GUI（グラフィカルユーザーインターフェース）で環境管理が可能である。そのため、Anacondaはプログラミング初心者にとってより使いやすい一方、Minicondaよりも多くのストレージを必要とする（約4.4 GB対約480 MB)[^1]。
 
 本チュートリアルでは、すべてをコマンドラインで行うため、Minicondaで十分である。ダウンロードリンクは次になる。
 
