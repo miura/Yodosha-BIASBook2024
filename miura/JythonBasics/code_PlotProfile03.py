@@ -9,7 +9,6 @@ def getProfile(imp):
 	for val in profile:
 		print( val )
 	return profile
-	
 
 def writeProfileToFile(writepath, profile):
 	f = open(writepath, 'wb')
