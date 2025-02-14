@@ -1,0 +1,2 @@
+## Convert to .md
+jupyter nbconvert --to markdown draft.ipynb
