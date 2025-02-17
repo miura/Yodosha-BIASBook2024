@@ -39,7 +39,6 @@ import csv
 
 #インスタンスの作成
 IC = ImageCalculator()
-
 #ポップアップアップウインドウで取得した情報
 	#探索するフォルダの絶対パスを取得
 srcDir = srcFile.getAbsolutePath()
