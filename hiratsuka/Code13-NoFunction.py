@@ -3,7 +3,7 @@
 #@ String (label = "File extension", value=".tif") ext
 #@ String (label = "File name contains", value = "") containString
 #@ Integer (label = "Background subtraction (Disabled if 0)", value = 50) BGval
-#@ Integer (Label = "3D filter (Disabled if 0)", value = 1) sigma
+#@ Integer (label = "3D filter (Disabled if 0)", value = 1) sigma
 
 #------------Trackmateのパラメータ-----------
 SegCh = 3
