@@ -12,35 +12,38 @@
 
 ## 解説
 
-Code1.py    本章　コード01：チャネルの分割
+Code1.py      本章　コード01：チャネルの分割
 
-Code2.py    本章　コード02：重ね合わせ画像の作成
+Code2.py      本章　コード02：重ね合わせ画像の作成
 
-Code3.py    本章　コード03：チャネルを分割し重ね合わせ画像を作成する関数
+Code3.py      本章　コード03：チャネルを分割し重ね合わせ画像を作成する関数
 
-Code4.py
+Code4.py      本章　コード04：ガウスぼかし
 
-Code5.py
+Code5.py      本章　コード05：パラメータをかへんにしたガウスぼかしの関数
 
-Code6.py
+Code6.py      本章　コード06：パラメータをポップアップで入力するガウスぼかし関数
 
-Code7.py
+Code7.py      本章　コード07：
 
-Code8.py
+Code8.py      本章　コード08：
 
-Code9.py
+Code9.py      本章　コード09：
 
-Code10.py
 
-Code11.py
 
-Code12.py
 
-Code13.py
+Code10.py      本章　コード03：
 
-Code14.py
+Code11.py      本章　コード03：
 
-Code15.py
+Code12.py      本章　コード03：
+
+Code13.py      本章　コード03：
+
+Code14.py      本章　コード03：
+
+Code15.py      本章　コード03：
 
 
 
