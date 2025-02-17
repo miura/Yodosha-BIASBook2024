@@ -1,5 +1,5 @@
 #@ Integer (label = "Background subtraction (Disabled if 0)", value = 50) BGval
-#@ Integer (Label = "3D filter (Disabled if 0)", value = 1) sigma
+#@ Integer (label = "3D filter (Disabled if 0)", value = 1) sigma
 
 #モジュールのimport
 import os
