@@ -10,6 +10,7 @@
 1. [Fijiのインストールの仕方](instructions/InstallingFiji.md)
 2. [FIjiを最新状態にする方法](instructions/UpdatingFiji.md)
 3. [Update Siteを使ってFijiにプラグインを追加する方法](instructions/InstallingPluginViaUpdateSites.md)
+4. [選択領域の保存の仕方](instructions/savingROI.md)
 
 ### 深層学習のための環境
 
