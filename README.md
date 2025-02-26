@@ -1,6 +1,6 @@
 # 『型で実践する生物画像解析　ImageJ・Python・napari』サポートリポジトリ
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14930301.svg)](https://doi.org/10.5281/zenodo.14930301)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14930819.svg)](https://doi.org/10.5281/zenodo.14930819)
 
 書籍からこちらのサイトに来た方は、特定の項目を探しているのではないかと思う。
 以下の目次からその項目を探し、リンク先を参照してほしい。
