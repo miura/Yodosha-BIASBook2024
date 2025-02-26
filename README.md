@@ -26,7 +26,6 @@
       1. [コード（ノートブック）](huang/code/sample_code.ipynb)
       2. [サンプル画像](huang/code/sample_images)
    4. Google Colaboratoryの利用法 ――クラウドPythonプログラミング（戸田　陽介）
-      1. ノートブック
 2. 実践編
    1. 核膜に移行するタンパク質の動態の測定（三浦　耕太）
       1. [コード](miura/module_Nucleus)
@@ -50,7 +49,7 @@
       1. [コード](tsuchida/)
 3. 論文投稿編
    1. 論文投稿のための画像解析の再現性チェックリストとGitHubの活用（三浦　耕太）
-      1. リンクなど
+      1. [リンクなど](miura/reproducibleMethods.md)
    2. 画像データレポジトリ ―種類と使い方―（遠里　由佳子，京田　耕司,　 大浪　修一）
 4. 発展編
    1. イメージングデータの次世代ファイルフォーマット（京田　耕司，大浪　修一）
