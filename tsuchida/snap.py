@@ -17,3 +17,9 @@ image.shape
 # napariで取得画像を表示
 import napari
 napari.imshow(image)
+
+
+# ---
+
+# napariを終了するまで走らせる (対話的に使用時は不要)
+napari.run()
